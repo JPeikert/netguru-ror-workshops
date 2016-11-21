@@ -4,5 +4,7 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
+    notes = subject_item_notes.where(subject_item_id: subject_item.id).collect(&:value)
+    notes.empty? ? "0.00" : "%.2f" % (notes.inject(:+).to_f/notes.size)
   end
 end
