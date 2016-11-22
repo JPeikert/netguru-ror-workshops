@@ -1,4 +1,17 @@
 - breadcrumb :tuitions
 .tuitions
-  list of tuitions:
-  
+  .title
+    = "Tuitions"
+  %table.table.table-condensed#tuitions
+    %thead
+      %tr
+        %th.full-name= t('tuitions.columns.name')
+        %th.birthdate= t('tuitions.columns.birthdate')
+        %th.month= t('tuitions.columns.month')
+    %tbody
+      - tuitions.each do |tuition|
+        - tuition.students.each do |student|
+          %tr
+            %td= student.decorate.full_name
+            %td= student.decorate.birth_date
+            %td= tuition.month

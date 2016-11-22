@@ -35,3 +35,8 @@ en:
       full_name: Full name
       birthdate: Birthdate
       avg_notes: Notes average
+  tuitions:
+    columns:
+      full_name: Full name
+      birthdate: Birthdate
+      month: Month

@@ -54,4 +54,18 @@ SubjectItem.all.each do |subject_item|
   end
 end
 
+(1..12).each { |i| Tuition.create!(month: i) }
+
+tuitions = Tuition.all
+students.each do |student|
+  month = rand(1..4)
+  rand(4..8).times do
+    month += 1
+    payment_date = "2015-#{month}-#{rand(1..30)}"
+    p = Payment.new(payment_date: payment_date, student: student, tuition: tuitions[month - 1])
+    puts "INVALID: #{p.inspect}" if p.invalid?
+    p.save if p.valid?
+  end
+end
+
 puts "Seeds: done"
