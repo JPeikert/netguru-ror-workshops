@@ -7,6 +7,8 @@ RSpec.describe Payment, type: :model do
 
   describe 'database columns' do
     it { should have_db_column :payment_date }
+    it { should have_db_column :student_id }
+    it { should have_db_column :tuition_id }
   end
 
   describe 'associations' do

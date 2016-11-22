@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   get '/reports/subjects', to: 'reports#subjects', as: 'report_subjects'
+  get '/reports/tuitions', to: 'reports#tuitions', as: 'report_tuitions'
 end
